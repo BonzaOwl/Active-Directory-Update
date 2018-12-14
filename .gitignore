@@ -24,7 +24,9 @@ x86/*
 [Aa][Rr][Mm]64/*
 bld/*
 [Bb]in/*
+[Bb]in/[Dd]ebug/
 [Oo]bj/*
+[Oo]bj/[Dd]ebug/
 [Ll]og/*
 
 # Visual Studio 2015/2017 cache/options directory
