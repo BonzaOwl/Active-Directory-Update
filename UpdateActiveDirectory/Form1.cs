@@ -3,7 +3,6 @@ using System.IO;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 using System.DirectoryServices;
 
 namespace UpdateActiveDirectory
@@ -44,29 +43,12 @@ namespace UpdateActiveDirectory
         }
         
         private void Form1_Load(object sender, EventArgs e)
-                {
-
-                }
-
-        public void RecordLog(string username, string telephone, string result)
         {
-            if (File.Exists(FileName))
 
-            {
-                now = DateTime.Now;
-                File.AppendAllText(FileName, now + " " + username + " " + telephone + " " + result + Environment.NewLine);
-            }
-            else
-            {
-                now = DateTime.Now;
-                File.Create(FileName);
-                File.AppendAllText(FileName, now + " " + username + " " + telephone + " " + result + Environment.NewLine);
-            }
         }        
 
         public void GetResults()
         {
-
             GetDBAuthDetails();
 
             try
@@ -220,9 +202,6 @@ namespace UpdateActiveDirectory
 
                 using (DirectorySearcher searcher = new DirectorySearcher(rootEntry))
                 {
-
-
-
                     //Search on the following
                     //People
                     //Users 
@@ -455,13 +434,11 @@ namespace UpdateActiveDirectory
         private void txtDomain_TextChanged(object sender, EventArgs e)
         {
             lblAuthError.Visible = false;
-
         }
 
         private void txtUsrName_TextChanged(object sender, EventArgs e)
         {
             lblAuthError.Visible = false;
-
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
